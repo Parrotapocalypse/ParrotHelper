@@ -1,0 +1,6 @@
+- Name: FriendlyHelper
+  Version: 0.1.0
+  DLL: Code/bin/Debug/FriendlyHelper.dll
+  Dependencies:
+    - Name: Everest
+      Version: 1.2792.0
