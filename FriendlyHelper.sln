@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31321.278
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FriendlyHelper", "FriendlyHelper\FriendlyHelper.csproj", "{844939EE-147F-4360-BD03-BB6E399B3053}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{844939EE-147F-4360-BD03-BB6E399B3053}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{844939EE-147F-4360-BD03-BB6E399B3053}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{844939EE-147F-4360-BD03-BB6E399B3053}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{844939EE-147F-4360-BD03-BB6E399B3053}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {527480F0-8A80-4048-90D4-5B0BFA9D68A5}
+	EndGlobalSection
+EndGlobal
