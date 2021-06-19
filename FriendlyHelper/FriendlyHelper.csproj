@@ -21,6 +21,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DisabledWarnings>CS0579</DisabledWarnings>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -29,18 +30,23 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DisabledWarnings>CS0579</DisabledWarnings>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Celeste">
-      <HintPath>..\..\..\Celeste.exe</HintPath>
+      <HintPath>..\..\Celeste.exe</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="FNA">
-      <HintPath>..\..\..\FNA.dll</HintPath>
+      <HintPath>..\..\FNA.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="MMHOOK_Celeste">
-      <HintPath>..\..\..\MMHOOK_Celeste.dll</HintPath>
+      <HintPath>..\..\MMHOOK_Celeste.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="MonoMod.Utils">
+      <HintPath>..\..\MonoMod.Utils.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="System" />
@@ -49,16 +55,21 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
     <Reference Include="YamlDotNet">
-      <HintPath>..\..\..\YamlDotNet.dll</HintPath>
+      <HintPath>..\..\YamlDotNet.dll</HintPath>
       <Private>False</Private>
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\CustomFakeHeart.cs" />
     <Compile Include="FriendlyHelperModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <None Include="Ahorn\entities\FriendlyHelperCustomFakeHeart.jl" />
+    <None Include="Ahorn\lang\en_gb.lang" />
+    <None Include="everest.yaml" />
   </ItemGroup>
-  <EmbeddedResource Include="Content\Dialog\English.txt">
-    <LogicalName>Content\Dialog\English.txt</LogicalName>
-  </EmbeddedResource>
+  <ItemGroup>
+    <Folder Include="bin\Debug\" />
+    <Folder Include="bin\Release\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
