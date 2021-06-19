@@ -9,17 +9,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Celeste.Mod.FriendlyHelper.Entities;
+using Celeste.Mod.ParrotHelper.Entities;
 
-namespace Celeste.Mod.FriendlyHelper
+namespace Celeste.Mod.ParrotHelper
 {
-	public class FriendlyHelperModule : EverestModule
+	public class ParrotHelperModule : EverestModule
 	{
 
 		// Only one alive module instance can exist at any given time.
-		public static FriendlyHelperModule Instance;
+		public static ParrotHelperModule Instance;
 
-		public FriendlyHelperModule()
+		public ParrotHelperModule()
 		{
 			Instance = this;
 		}
@@ -28,23 +28,23 @@ namespace Celeste.Mod.FriendlyHelper
 		// Those are optional: if you don't need one of those, you can remove it from the module.
 
 		// If you need to store settings:
-		//public override Type SettingsType => typeof(FriendlyHelperModuleSettings);
-		//public static FriendlyHelperModuleSettings Settings => (FriendlyHelperModuleSettings)Instance._Settings;
+		//public override Type SettingsType => typeof(ParrotHelperModuleSettings);
+		//public static ParrotHelperModuleSettings Settings => (ParrotHelperModuleSettings)Instance._Settings;
 
 		// If you need to store save data:
-		//public override Type SaveDataType => typeof(FriendlyHelperModuleSaveData);
-		//public static FriendlyHelperModuleSaveData SaveData => (FriendlyHelperModuleSaveData)Instance._SaveData;
+		//public override Type SaveDataType => typeof(ParrotHelperModuleSaveData);
+		//public static ParrotHelperModuleSaveData SaveData => (ParrotHelperModuleSaveData)Instance._SaveData;
 
 		// If you need to store session data:
-		//public override Type SessionType => typeof(FriendlyHelperModuleSession);
-		//public static FriendlyHelperModuleSession Session => (FriendlyHelperModuleSession)Instance._Session;
+		//public override Type SessionType => typeof(ParrotHelperModuleSession);
+		//public static ParrotHelperModuleSession Session => (ParrotHelperModuleSession)Instance._Session;
 
 		// Set up any hooks, event handlers and your mod in general here.
 		// Load runs before Celeste itself has initialized properly.
 		public override void Load()
 		{
-			Logger.SetLogLevel("FriendlyHelper", LogLevel.Info);
-			Logger.Log(LogLevel.Info, "FriendlyHelper", "Applying gradient dust with path: ");
+			Logger.SetLogLevel("ParrotHelper", LogLevel.Info);
+			Logger.Log(LogLevel.Info, "ParrotHelper", "Applying gradient dust with path: ");
 		}
 
 		// Optional, initialize anything after Celeste has initialized itself properly.

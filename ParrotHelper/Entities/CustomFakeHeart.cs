@@ -4,9 +4,9 @@ using Microsoft.Xna.Framework;
 using Monocle;
 using MonoMod.Utils;
 
-namespace Celeste.Mod.FriendlyHelper.Entities
+namespace Celeste.Mod.ParrotHelper.Entities
 {
-	[CustomEntity("FriendlyHelper/CustomFakeHeart = Load")]
+	[CustomEntity("ParrotHelper/CustomFakeHeart")]
 	[TrackedAs(typeof(HeartGem))]
 	public class CustomFakeHeart : HeartGem
 	{

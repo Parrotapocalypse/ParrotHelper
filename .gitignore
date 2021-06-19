@@ -364,4 +364,6 @@ FodyWeavers.xsd
 
 # Manually added files
 obj/
-FriendlyHelper.csproj.*
+ParrotHelper.csproj.*
+*.zip
+*.log

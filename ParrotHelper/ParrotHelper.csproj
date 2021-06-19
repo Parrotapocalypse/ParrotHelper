@@ -61,9 +61,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entities\CustomFakeHeart.cs" />
-    <Compile Include="FriendlyHelperModule.cs" />
+    <Compile Include="ParrotHelperModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <None Include="Ahorn\entities\FriendlyHelperCustomFakeHeart.jl" />
+    <None Include="Ahorn\entities\ParrotHelperCustomFakeHeart.jl" />
     <None Include="Ahorn\lang\en_gb.lang" />
     <None Include="everest.yaml" />
   </ItemGroup>

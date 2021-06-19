@@ -1,11 +1,11 @@
-module FriendlyHelperCustomFakeHeart
+module ParrotHelperCustomFakeHeart
 
 using ..Ahorn, Maple
 
-@mapdef Entity "FriendlyHelper/CustomFakeHeart" CustomFakeHeart(x::Integer, y::Integer, color::String="dad8cc", flag::String="fake_heart", removeCameraTriggers::Bool=false)
+@mapdef Entity "ParrotHelper/CustomFakeHeart" CustomFakeHeart(x::Integer, y::Integer, color::String="dad8cc", flag::String="fake_heart", removeCameraTriggers::Bool=false)
 
 const placements = Ahorn.PlacementDict(
-   "Custom Fake Heart (Friendly Helper)" => Ahorn.EntityPlacement(
+   "Custom Fake Heart (Parrot Helper)" => Ahorn.EntityPlacement(
       CustomFakeHeart
    )
 )

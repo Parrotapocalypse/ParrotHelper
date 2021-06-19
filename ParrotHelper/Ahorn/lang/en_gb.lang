@@ -1,0 +1,8 @@
+# Custom Fake Heart
+#placements.entities.ParrotHelper/CustomFakeHeart.tooltips.RemoveCameraTriggers=Whether the heart should remove camera triggers once it is triggered.
+placements.entities.ParrotHelper/CustomFakeHeart.tooltips.color=The hex color value of the heart, defaulting to gray. To copy the vanilla hearts, use 00ffff for blue, ff0000 for red, and ffd700 for yellow.
+placements.entities.ParrotHelper/CustomFakeHeart.tooltips.FakeHeartDialog=The dialog that plays before the heart breaks.
+placements.entities.ParrotHelper/CustomFakeHeart.tooltips.KeepGoingDialog=The dialog that plays after the heart breaks.
+# FlagBerry
+placements.entities.ParrotHelper/FlagBerry.tooltips.Set=If the flag is turned on or off.
+placements.entities.ParrotHelper/FlagBerry.tooltips.Flag=The name of the flag you want to affect.
