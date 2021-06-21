@@ -1,11 +1,11 @@
-module FriendlyHelperFlagBerry
+module ParrotHelperFlagBerry
 
 using ..Ahorn, Maple
 
-@mapdef Entity "FriendlyHelper/FlagBerry" FlagBerry(x::Integer, y::Integer, Flag::String="berry_flag", Set::Bool=false)
+@mapdef Entity "ParrotHelper/FlagBerry" FlagBerry(x::Integer, y::Integer, Flag::String="berry_flag", Set::Bool=false)
 
 const placements = Ahorn.PlacementDict(
-    "FlagBerry (FriendlyHelper)" => Ahorn.EntityPlacement(
+    "FlagBerry (ParrotHelper)" => Ahorn.EntityPlacement(
         FlagBerry,
         "point"
     )

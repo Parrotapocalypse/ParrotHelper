@@ -7,8 +7,8 @@
     <ProjectGuid>{844939EE-147F-4360-BD03-BB6E399B3053}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>FriendlyHelper</RootNamespace>
-    <AssemblyName>FriendlyHelper</AssemblyName>
+    <RootNamespace>ParrotHelper</RootNamespace>
+    <AssemblyName>ParrotHelper</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -70,6 +70,23 @@
   <ItemGroup>
     <Folder Include="bin\Debug\" />
     <Folder Include="bin\Release\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Graphics\Atlases\Gameplay\collectables\ParrotHelper\FakeHeart\00.png" />
+    <Content Include="Graphics\Atlases\Gameplay\collectables\ParrotHelper\FakeHeart\01.png" />
+    <Content Include="Graphics\Atlases\Gameplay\collectables\ParrotHelper\FakeHeart\02.png" />
+    <Content Include="Graphics\Atlases\Gameplay\collectables\ParrotHelper\FakeHeart\03.png" />
+    <Content Include="Graphics\Atlases\Gameplay\collectables\ParrotHelper\FakeHeart\04.png" />
+    <Content Include="Graphics\Atlases\Gameplay\collectables\ParrotHelper\FakeHeart\05.png" />
+    <Content Include="Graphics\Atlases\Gameplay\collectables\ParrotHelper\FakeHeart\06.png" />
+    <Content Include="Graphics\Atlases\Gameplay\collectables\ParrotHelper\FakeHeart\07.png" />
+    <Content Include="Graphics\Atlases\Gameplay\collectables\ParrotHelper\FakeHeart\08.png" />
+    <Content Include="Graphics\Atlases\Gameplay\collectables\ParrotHelper\FakeHeart\09.png" />
+    <Content Include="Graphics\Atlases\Gameplay\collectables\ParrotHelper\FakeHeart\10.png" />
+    <Content Include="Graphics\Atlases\Gameplay\collectables\ParrotHelper\FakeHeart\11.png" />
+    <Content Include="Graphics\Atlases\Gameplay\collectables\ParrotHelper\FakeHeart\12.png" />
+    <Content Include="Graphics\Atlases\Gameplay\collectables\ParrotHelper\FakeHeart\13.png" />
+    <Content Include="Graphics\ParrotHelper\ParrotHelperSprites.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

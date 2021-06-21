@@ -44,7 +44,7 @@ namespace Celeste.Mod.ParrotHelper
 		public override void Load()
 		{
 			Logger.SetLogLevel("ParrotHelper", LogLevel.Info);
-			Logger.Log(LogLevel.Info, "ParrotHelper", "Applying gradient dust with path: ");
+			Logger.Log(LogLevel.Info, "ParrotHelper", "Working!");
 		}
 
 		// Optional, initialize anything after Celeste has initialized itself properly.
@@ -52,15 +52,17 @@ namespace Celeste.Mod.ParrotHelper
 		{
 		}
 
+		public static SpriteBank SpriteBank;
+
 		// Optional, do anything requiring either the Celeste or mod content here.
 		public override void LoadContent(bool firstLoad)
 		{
+			SpriteBank = new SpriteBank(GFX.Game, "Graphics/ParrotHelper/ParrotHelperSprites.xml");
 		}
 
 		// Unload the entirety of your mod's content. Free up any native resources.
 		public override void Unload()
 		{
 		}
-
 	}
 }
