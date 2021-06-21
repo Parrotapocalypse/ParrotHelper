@@ -68,10 +68,10 @@
     <None Include="everest.yaml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="bin\Debug\" />
     <Folder Include="bin\Release\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bin\Debug\ParrotHelper.dll" />
     <Content Include="Graphics\Atlases\Gameplay\collectables\ParrotHelper\FakeHeart\00.png" />
     <Content Include="Graphics\Atlases\Gameplay\collectables\ParrotHelper\FakeHeart\01.png" />
     <Content Include="Graphics\Atlases\Gameplay\collectables\ParrotHelper\FakeHeart\02.png" />
