@@ -2,12 +2,18 @@ module ParrotHelperCustomFakeHeart
 
 using ..Ahorn, Maple
 
-@mapdef Entity "ParrotHelper/CustomFakeHeart" CustomFakeHeart(x::Integer, y::Integer, color::String="dad8cc", fakeHeartDialog::String="CH9_FAKE_HEART", keepGoingDialog::String="CH9_KEEP_GOING", removeCameraTriggers::Bool=false, invisibleBarriers::Bool=true)
+@mapdef Entity "ParrotHelper/CustomFakeHeart" CustomFakeHeart(x::Integer, y::Integer, presets::String="Gray", color::String="", fakeHeartDialog::String="CH9_FAKE_HEART", keepGoingDialog::String="CH9_KEEP_GOING", removeCameraTriggers::Bool=false)
 
 const placements = Ahorn.PlacementDict(
    "Custom Fake Heart (ParrotHelper)" => Ahorn.EntityPlacement(
 	  CustomFakeHeart
    )
+)
+
+const heartTypes = ["Blue", "Red", "Gold", "Gray", ""]
+
+Ahorn.editingOptions(entity::CustomFakeHeart) = Dict{String, Any}(
+  "presets" => heartTypes
 )
 
 function getColor(color)
@@ -32,10 +38,14 @@ function Ahorn.selection(entity::CustomFakeHeart)
 end
 
 function Ahorn.render(ctx::Ahorn.Cairo.CairoContext, entity::CustomFakeHeart, room::Maple.Room)
-	if entity.color == "00ffff"
+	if entity.presets == "Blue"
 		Ahorn.drawSprite(ctx, "collectables/heartGem/0/00.png", 0, 0)
-	elseif entity.color == "ff0000"
+	elseif entity.presets == "Red"
 		Ahorn.drawSprite(ctx, "collectables/heartGem/1/00.png", 0, 0)
+	elseif entity.presets == "Gold"
+		Ahorn.drawSprite(ctx, "collectables/heartGem/2/00.png", 0, 0)
+	elseif entity.presets == "Gray"
+		Ahorn.drawSprite(ctx, "collectables/heartGem/3/00.png", 0, 0)
 	else
 		inputcolor = entity.color
 		color = getColor(inputcolor)

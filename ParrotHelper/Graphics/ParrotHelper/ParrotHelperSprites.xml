@@ -7,4 +7,11 @@
 		<Loop id="spin" path="" frames="0*10,1-13" delay="0.1"/>
 		<Loop id="fastspin" path="" delay="0.1"/>
 	</parrothelperfakeheart>
+  <parrothelperfakeheartoutline path="collectables/ParrotHelper/FakeHeartOutline/" start="spin">
+    <Center />
+
+    <Loop id="idle" path="" frames="0" />
+    <Loop id="spin" path="" frames="0*10,1-13" delay="0.1"/>
+    <Loop id="fastspin" path="" delay="0.1"/>
+  </parrothelperfakeheartoutline>
 </Sprites>
