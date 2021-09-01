@@ -365,8 +365,3 @@ FodyWeavers.xsd
 # Manually added files
 ParrotHelper.csproj.*
 *.zip
-*.log
-/prototypeclouds/Graphics/tmpxmls/twoday
-/prototypeclouds/Maps/tmp/twoday
-/prototypeclouds/Graphics/Atlases/Gameplay
-/tmpdownload-20210623-115825.zip.part

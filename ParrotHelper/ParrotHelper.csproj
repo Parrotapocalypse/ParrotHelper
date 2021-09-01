@@ -17,7 +17,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>..\..\..\..\..\..\Program Files %28x86%29\Steam\steamapps\common\Celeste\Mods\ParrotHelper\bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -34,19 +34,25 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Celeste">
-      <HintPath>..\..\Celeste.exe</HintPath>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Celeste\Celeste.exe</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="FNA">
-      <HintPath>..\..\FNA.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Celeste\FNA.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="MMHOOK_Celeste">
-      <HintPath>..\..\MMHOOK_Celeste.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Celeste\MMHOOK_Celeste.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="Mono.Cecil">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Celeste\Mono.Cecil.dll</HintPath>
+    </Reference>
+    <Reference Include="MonoMod.RuntimeDetour">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Celeste\MonoMod.RuntimeDetour.dll</HintPath>
+    </Reference>
     <Reference Include="MonoMod.Utils">
-      <HintPath>..\..\MonoMod.Utils.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Celeste\MonoMod.Utils.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="System" />
@@ -55,38 +61,37 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
     <Reference Include="YamlDotNet">
-      <HintPath>..\..\YamlDotNet.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Celeste\YamlDotNet.dll</HintPath>
       <Private>False</Private>
     </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entities\CustomFakeHeart.cs" />
     <Compile Include="ParrotHelperModule.cs" />
-    <Compile Include="ParrotHelperModuleSession.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
     <None Include="Ahorn\entities\ParrotHelperCustomFakeHeart.jl" />
     <None Include="Ahorn\lang\en_gb.lang" />
     <None Include="everest.yaml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\Release\" />
+    <Folder Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="bin\Debug\ParrotHelper.dll" />
-    <Content Include="Graphics\Atlases\Gameplay\collectables\ParrotHelper\FakeHeartOutline\00.png" />
-    <Content Include="Graphics\Atlases\Gameplay\collectables\ParrotHelper\FakeHeartOutline\01.png" />
-    <Content Include="Graphics\Atlases\Gameplay\collectables\ParrotHelper\FakeHeartOutline\02.png" />
-    <Content Include="Graphics\Atlases\Gameplay\collectables\ParrotHelper\FakeHeartOutline\03.png" />
-    <Content Include="Graphics\Atlases\Gameplay\collectables\ParrotHelper\FakeHeartOutline\04.png" />
-    <Content Include="Graphics\Atlases\Gameplay\collectables\ParrotHelper\FakeHeartOutline\05.png" />
-    <Content Include="Graphics\Atlases\Gameplay\collectables\ParrotHelper\FakeHeartOutline\06.png" />
-    <Content Include="Graphics\Atlases\Gameplay\collectables\ParrotHelper\FakeHeartOutline\07.png" />
-    <Content Include="Graphics\Atlases\Gameplay\collectables\ParrotHelper\FakeHeartOutline\08.png" />
-    <Content Include="Graphics\Atlases\Gameplay\collectables\ParrotHelper\FakeHeartOutline\09.png" />
+    <Content Include="Graphics\Atlases\Gameplay\collectables\ParrotHelper\FakeHeartOutline\0.png" />
+    <Content Include="Graphics\Atlases\Gameplay\collectables\ParrotHelper\FakeHeartOutline\1.png" />
     <Content Include="Graphics\Atlases\Gameplay\collectables\ParrotHelper\FakeHeartOutline\10.png" />
     <Content Include="Graphics\Atlases\Gameplay\collectables\ParrotHelper\FakeHeartOutline\11.png" />
     <Content Include="Graphics\Atlases\Gameplay\collectables\ParrotHelper\FakeHeartOutline\12.png" />
     <Content Include="Graphics\Atlases\Gameplay\collectables\ParrotHelper\FakeHeartOutline\13.png" />
+    <Content Include="Graphics\Atlases\Gameplay\collectables\ParrotHelper\FakeHeartOutline\2.png" />
+    <Content Include="Graphics\Atlases\Gameplay\collectables\ParrotHelper\FakeHeartOutline\3.png" />
+    <Content Include="Graphics\Atlases\Gameplay\collectables\ParrotHelper\FakeHeartOutline\4.png" />
+    <Content Include="Graphics\Atlases\Gameplay\collectables\ParrotHelper\FakeHeartOutline\5.png" />
+    <Content Include="Graphics\Atlases\Gameplay\collectables\ParrotHelper\FakeHeartOutline\6.png" />
+    <Content Include="Graphics\Atlases\Gameplay\collectables\ParrotHelper\FakeHeartOutline\7.png" />
+    <Content Include="Graphics\Atlases\Gameplay\collectables\ParrotHelper\FakeHeartOutline\8.png" />
+    <Content Include="Graphics\Atlases\Gameplay\collectables\ParrotHelper\FakeHeartOutline\9.png" />
     <Content Include="Graphics\Atlases\Gameplay\collectables\ParrotHelper\FakeHeart\00.png" />
     <Content Include="Graphics\Atlases\Gameplay\collectables\ParrotHelper\FakeHeart\01.png" />
     <Content Include="Graphics\Atlases\Gameplay\collectables\ParrotHelper\FakeHeart\02.png" />
@@ -266,8 +271,8 @@
     <Content Include="Graphics\Atlases\Gui\collectables\ParrotHelper\RecolorHeart\FakeHeart0030.png" />
     <Content Include="Graphics\Atlases\Gui\collectables\ParrotHelper\RecolorHeart\FakeHeart0031.png" />
     <Content Include="Graphics\Atlases\Gui\collectables\ParrotHelper\RecolorHeart\FakeHeart0032.png" />
-    <Content Include="Graphics\ParrotHelper\ParrotHelperSprites.xml" />
     <Content Include="Graphics\ParrotHelper\ParrotHelperGuiSprites.xml" />
+    <Content Include="Graphics\ParrotHelper\ParrotHelperSprites.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

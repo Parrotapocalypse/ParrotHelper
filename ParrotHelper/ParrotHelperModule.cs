@@ -33,8 +33,8 @@ namespace Celeste.Mod.ParrotHelper
 		//public static ParrotHelperModuleSaveData SaveData => (ParrotHelperModuleSaveData)Instance._SaveData;
 
 		// If you need to store session data:
-		public override Type SessionType => typeof(ParrotHelperModuleSession);
-		public static ParrotHelperModuleSession Session => (ParrotHelperModuleSession)Instance._Session;
+		//public override Type SessionType => typeof(ParrotHelperModuleSession);
+		//public static ParrotHelperModuleSession Session => (ParrotHelperModuleSession)Instance._Session;
 
 		// Set up any hooks, event handlers and your mod in general here.
 		// Load runs before Celeste itself has initialized properly.
@@ -55,13 +55,12 @@ namespace Celeste.Mod.ParrotHelper
 		public override void LoadContent(bool firstLoad)
 		{
 			SpriteBank = new SpriteBank(GFX.Game, "Graphics/ParrotHelper/ParrotHelperSprites.xml");
-			GuiSpriteBank = new SpriteBank(GFX.Game, "Graphics/ParrotHelper/ParrotHelperGuiSprites.xml");
+			GuiSpriteBank = new SpriteBank(GFX.Gui, "Graphics/ParrotHelper/ParrotHelperGuiSprites.xml");
 		}
 
 		// Unload the entirety of your mod's content. Free up any native resources.
 		public override void Unload()
 		{
-			
 		}
 	}
 }

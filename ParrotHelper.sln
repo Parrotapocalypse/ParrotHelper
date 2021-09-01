@@ -8,6 +8,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{535E8D0E-9B76-4B89-B2DD-ACCF1AEF70CB}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
+		ParrotHelper\Graphics\ParrotHelper\ParrotHelperSprites.xml = ParrotHelper\Graphics\ParrotHelper\ParrotHelperSprites.xml
 	EndProjectSection
 EndProject
 Global

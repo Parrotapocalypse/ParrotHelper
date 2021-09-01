@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Sprites>
+  <parrothelperrecolorheart path="collectables/ParrotHelper/FakeHeart" start="idle">
+    <Center />
+    <Loop id="idle" path="" frames="0" />
+    <Loop id="spin" path="" frames="0*10,1-10" delay="0.08"/>
+    <Loop id="fastspin" path="" frames="1-10" delay="0.08"/>
+    <Anim id="break" path="" frames="11-32" delay="0.07"/>
+  </parrothelperrecolorheart>
+</Sprites>

@@ -10,8 +10,8 @@
   <parrothelperfakeheartoutline path="collectables/ParrotHelper/FakeHeartOutline/" start="spin">
     <Center />
 
-    <Loop id="idle" path="" frames="0" />
-    <Loop id="spin" path="" frames="0*10,1-13" delay="0.1"/>
-    <Loop id="fastspin" path="" delay="0.1"/>
+    <Loop id="idle" path="frame" frames="0" />
+    <Loop id="spin" path="frame" frames="0*10,1-13" delay="0.1"/>
+    <Loop id="fastspin" path="frame" delay="0.1"/>
   </parrothelperfakeheartoutline>
 </Sprites>
