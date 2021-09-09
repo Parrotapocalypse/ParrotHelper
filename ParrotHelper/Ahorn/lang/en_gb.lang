@@ -4,3 +4,11 @@ placements.entities.ParrotHelper/CustomFakeHeart.tooltips.color=The hex color va
 placements.entities.ParrotHelper/CustomFakeHeart.tooltips.fakeHeartDialog=The dialog that plays before the heart breaks.
 placements.entities.ParrotHelper/CustomFakeHeart.tooltips.keepGoingDialog=The dialog that plays after the heart breaks.
 placements.entities.ParrotHelper/CustomFakeHeart.tooltips.presets=Heart colors for the vanilla hearts. Overrides the color setting.
+placements.entities.ParrotHelper/CustomFakeHeart.tooltips.flag=The flag set on collection.
+# FlagBerries
+placements.entities.ParrotHelper/FlagBerry.tooltips.flag=The name of the flag to affect.
+placements.entities.ParrotHelper/FlagBerry.tooltips.set=The value to set the flag to.
+placements.entities.ParrotHelper/FlagBerryGold.tooltips.flag=The name of the flag to affect.
+placements.entities.ParrotHelper/FlagBerryGold.tooltips.set=The value to set the flag to.
+placements.entities.ParrotHelper/FlagBerryMoon.tooltips.flag=The name of the flag to affect.
+placements.entities.ParrotHelper/FlagBerryMoon.tooltips.set=The value to set the flag to.

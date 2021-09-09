@@ -19,7 +19,7 @@ namespace Celeste.Mod.ParrotHelper.Entities
 	[TrackedAs(typeof(HeartGem))]
 	public class CustomFakeHeart : Entity
 	{
-		private const string FAKE_HEART_FLAG = "fake_heart";
+		private string FAKE_HEART_FLAG;
 
 		public static ParticleType P_BlueShine = HeartGem.P_BlueShine;
 
@@ -126,6 +126,7 @@ namespace Celeste.Mod.ParrotHelper.Entities
 					
 			}
 			removeCameraTriggers = data.Bool("removeCameraTriggers", false);
+			FAKE_HEART_FLAG = data.Attr("flag", "fake_heart");
 		}
 
 		public override void Awake(Scene scene)
@@ -195,7 +196,7 @@ namespace Celeste.Mod.ParrotHelper.Entities
 				return;
 			}
 			Player entity = base.Scene.Tracker.GetEntity<Player>();
-			if ((entity != null && entity.X > base.X) || (scene as Level).Session.GetFlag("fake_heart"))
+			if ((entity != null && entity.X > base.X) || (scene as Level).Session.GetFlag(FAKE_HEART_FLAG))
 			{
 				Visible = false;
 				Alarm.Set(this, 0.0001f, delegate
@@ -432,7 +433,7 @@ namespace Celeste.Mod.ParrotHelper.Entities
 			{
 				sfx.Source.Stop();
 			}
-			level.Session.SetFlag("fake_heart");
+			level.Session.SetFlag(FAKE_HEART_FLAG);
 			level.Frozen = false;
 			level.FormationBackdrop.Display = false;
 			level.Session.Audio.Music.Event = "event:/new_content/music/lvl10/intermission_heartgroove";

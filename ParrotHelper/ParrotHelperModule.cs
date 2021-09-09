@@ -1,21 +1,9 @@
-﻿using Celeste.Mod.UI;
-using FMOD.Studio;
-using Microsoft.Xna.Framework;
-using Monocle;
-using Celeste;
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Celeste.Mod.ParrotHelper.Entities;
+﻿using Monocle;
 
 namespace Celeste.Mod.ParrotHelper
 {
 	public class ParrotHelperModule : EverestModule
 	{
-
 		// Only one alive module instance can exist at any given time.
 		public static ParrotHelperModule Instance;
 
@@ -38,9 +26,10 @@ namespace Celeste.Mod.ParrotHelper
 
 		// Set up any hooks, event handlers and your mod in general here.
 		// Load runs before Celeste itself has initialized properly.
+		
 		public override void Load()
 		{
-			Logger.SetLogLevel("ParrotHelper", LogLevel.Debug);
+			Logger.SetLogLevel("ParrotHelper", LogLevel.Info);
 		}
 
 		// Optional, initialize anything after Celeste has initialized itself properly.

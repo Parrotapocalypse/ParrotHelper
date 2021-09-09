@@ -67,8 +67,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entities\CustomFakeHeart.cs" />
+    <Compile Include="Entities\FlagBerry.cs" />
+    <Compile Include="Entities\FlagBerryGold.cs" />
+    <Compile Include="Entities\FlagBerryMoon.cs" />
     <Compile Include="ParrotHelperModule.cs" />
     <None Include="Ahorn\entities\ParrotHelperCustomFakeHeart.jl" />
+    <None Include="Ahorn\entities\ParrotHelperFlagBerry.jl" />
     <None Include="Ahorn\lang\en_gb.lang" />
     <None Include="everest.yaml" />
   </ItemGroup>

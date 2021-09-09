@@ -1,20 +1,20 @@
-module ParrotHelperFlagBerry
+module ParrotHelperFlagBerryMoon
 
 using ..Ahorn, Maple
 
-@mapdef Entity "ParrotHelper/FlagBerry" FlagBerry(x::Integer, y::Integer, flag::String="", set::Bool=true, winged::Bool=false, nodes::Array{Tuple{Integer, Integer}, 1}=Tuple{Integer, Integer}[])
+@mapdef Entity "ParrotHelper/FlagBerryMoon" FlagBerryMoon(x::Integer, y::Integer, flag::String="", set::Bool=true, nodes::Array{Tuple{Integer, Integer}, 1}=Tuple{Integer, Integer}[])
 
 const placements = Ahorn.PlacementDict(
-    "FlagBerry (ParrotHelper)" => Ahorn.EntityPlacement(
-        FlagBerry
+    "FlagBerry (Moon, ParrotHelper)" => Ahorn.EntityPlacement(
+        FlagBerryMoon
     )
 )
 
-Ahorn.nodeLimits(entity::FlagBerry) = 0, -1
+Ahorn.nodeLimits(entity::FlagBerryMoon) = 0, -1
 
 sprite = "collectables/strawberry/normal00"
 
-function Ahorn.selection(entity::FlagBerry)
+function Ahorn.selection(entity::FlagBerryMoon)
     x, y = Ahorn.position(entity)
 
     nodes = get(entity.data, "nodes", ())
@@ -22,7 +22,7 @@ function Ahorn.selection(entity::FlagBerry)
     if winged
         sprite = "collectables/strawberry/wings01"
     else
-        sprite = "collectables/strawberry/normal00"
+        sprite = "collectables/moonBerry/normal00"
     end
     hasPips = length(nodes) > 0
     res = Ahorn.Rectangle[Ahorn.getSpriteRectangle(sprite, x, y)]
@@ -38,7 +38,7 @@ function Ahorn.selection(entity::FlagBerry)
     return res
 end
 
-function Ahorn.renderSelectedAbs(ctx::Ahorn.Cairo.CairoContext, entity::FlagBerry)
+function Ahorn.renderSelectedAbs(ctx::Ahorn.Cairo.CairoContext, entity::FlagBerryMoon)
     x, y = Ahorn.position(entity)
 
     for node in get(entity.data, "nodes", ())
@@ -48,7 +48,7 @@ function Ahorn.renderSelectedAbs(ctx::Ahorn.Cairo.CairoContext, entity::FlagBerr
     end
 end
 
-function Ahorn.renderAbs(ctx::Ahorn.Cairo.CairoContext, entity::FlagBerry, room::Maple.Room)
+function Ahorn.renderAbs(ctx::Ahorn.Cairo.CairoContext, entity::FlagBerryMoon, room::Maple.Room)
     x, y = Ahorn.position(entity)
 
     nodes = get(entity.data, "nodes", ())
@@ -58,7 +58,7 @@ function Ahorn.renderAbs(ctx::Ahorn.Cairo.CairoContext, entity::FlagBerry, room:
     if winged
         sprite = "collectables/strawberry/wings01"
     else
-        sprite = "collectables/strawberry/normal00"
+        sprite = "collectables/moonBerry/normal00"
     end
 
     for node in nodes
@@ -70,7 +70,7 @@ function Ahorn.renderAbs(ctx::Ahorn.Cairo.CairoContext, entity::FlagBerry, room:
     Ahorn.drawSprite(ctx, sprite, x, y)
 end
 
-function Ahorn.render(ctx::Ahorn.Cairo.CairoContext, entity::FlagBerry, room::Maple.Room)
+function Ahorn.render(ctx::Ahorn.Cairo.CairoContext, entity::FlagBerryMoon, room::Maple.Room)
     x, y = Ahorn.position(entity)
     nodes = get(entity.data, "nodes", ())
     winged = get(entity.data, "winged", false)
@@ -79,7 +79,7 @@ function Ahorn.render(ctx::Ahorn.Cairo.CairoContext, entity::FlagBerry, room::Ma
     if winged
         sprite = "collectables/strawberry/wings01"
     else
-        sprite = "collectables/strawberry/normal00"
+        sprite = "collectables/moonBerry/normal00"
     end
     if hasPips
         for node in nodes

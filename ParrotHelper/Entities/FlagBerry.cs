@@ -1,61 +1,38 @@
 ﻿using Monocle;
-using Celeste;
 using Celeste.Mod.Entities;
 using Microsoft.Xna.Framework;
 using System.Collections;
+using System;
+using System.Collections.Generic;
+using MonoMod.Utils;
+using System.Reflection;
 
-namespace Celeste.Mod.FriendlyHelper.Entities
+namespace Celeste.Mod.ParrotHelper.Entities
 {
-	[CustomEntity("FriendlyHelper/FlagBerry")]
-	[RegisterStrawberry(true, false)]
-	[Tracked]
-	public class FlagBerry : Strawberry, IStrawberry
+	[CustomEntity("ParrotHelper/FlagBerry")]
+	[TrackedAs(typeof(Strawberry))]
+	class FlagBerry : Strawberry, IStrawberry
 	{
-		public static string flag;
-		private static bool set;
-		public FlagBerry(EntityData data, Vector2 offset) : base(data, offset, new EntityID(data.Level.Name, data.ID))
+		protected string flag;
+		protected bool set;
+		protected DynData<Strawberry> dynData;
+		protected bool n = true;
+		public FlagBerry(EntityData data, Vector2 offset, EntityID gid) : base(data, offset, gid)
 		{
-			flag = data.Attr("Flag", "berry_flag");
-			set = data.Bool("Set", true);
+			flag = data.Attr("flag", "flagberry");
+			set = data.Bool("set", true);
+			dynData = new DynData<Strawberry>(this);
+			dynData["Winged"] = data.Bool("winged", false);
 		}
-		public override void Added(Scene scene)
+		public override void Update()
 		{
-			//On.Celeste.Strawberry.CollectRoutine += onStrawberryCollect;
-			base.Added(scene);
-			Session session = SceneAs<Level>().Session;
-			if (!SaveData.Instance.CheckStrawberry(this.ID) || Position == null)
+			base.Update();
+			if (dynData.Get<bool>("collected") == true && n)
 			{
-				if (set)
-				{
-					session.SetFlag(flag);
-				}
-				else
-				{
-					session.SetFlag(flag, false);
-				}
+				n = false;
+				(Scene as Level).Session.SetFlag(flag, set);
 			}
 		}
-		private IEnumerator onStrawberryCollect(On.Celeste.Strawberry.orig_CollectRoutine orig, Strawberry self, int collectIndex)
-		{
-			IEnumerator output = orig(self, collectIndex);
-			while (output.MoveNext())
-			{
-				yield return null;
-			}
-			if (ReferenceEquals(self, this))
-			{
-				Session session = self.SceneAs<Level>().Session;
-				if (set)
-				{
-					session.SetFlag(flag);
-				}
-				else
-				{
-					session.SetFlag(flag, false);
-				}
-				RemoveSelf();
-			}
-			yield break;
-		}
+
 	}
 }
