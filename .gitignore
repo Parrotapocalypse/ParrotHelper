@@ -365,3 +365,4 @@ FodyWeavers.xsd
 # Manually added files
 ParrotHelper.csproj.*
 *.zip
+*.dll
