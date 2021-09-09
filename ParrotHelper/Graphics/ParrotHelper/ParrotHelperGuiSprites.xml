@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Sprites>
-  <parrothelperrecolorheart path="collectables/ParrotHelper/FakeHeart" start="idle">
+  <parrothelperrecolorheart path="collectables/heartgem/3/FakeHeart" start="idle">
     <Center />
     <Loop id="idle" path="" frames="0" />
     <Loop id="spin" path="" frames="0*10,1-10" delay="0.08"/>

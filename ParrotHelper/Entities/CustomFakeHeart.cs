@@ -1,17 +1,9 @@
 ﻿using Celeste.Mod.Entities;
 using Microsoft.Xna.Framework;
 using Monocle;
-using MonoMod.Utils;
 using System;
 using System.Collections;
-using System.Reflection;
-using Mono.Cecil;
-using Mono.Cecil.Cil;
-using MonoMod.Cil;
-using MonoMod.RuntimeDetour;
 using System.Collections.Generic;
-using Celeste.Mod.Meta;
-using System.Collections.ObjectModel;
 
 namespace Celeste.Mod.ParrotHelper.Entities
 {
