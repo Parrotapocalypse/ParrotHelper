@@ -1,9 +1,6 @@
 ﻿using Monocle;
 using Celeste.Mod.Entities;
 using Microsoft.Xna.Framework;
-using System.Collections;
-using System;
-using System.Collections.Generic;
 using MonoMod.Utils;
 using System.Reflection;
 
@@ -11,6 +8,7 @@ namespace Celeste.Mod.ParrotHelper.Entities
 {
 	[CustomEntity("ParrotHelper/FlagBerry")]
 	[TrackedAs(typeof(Strawberry))]
+	[RegisterStrawberry(true, false)]
 	class FlagBerry : Strawberry, IStrawberry
 	{
 		protected string flag;

@@ -93,27 +93,22 @@ namespace Celeste.Mod.ParrotHelper.Entities
 			fakeHeartDialog = data.Attr("fakeHeartDialog", "CH9_FAKE_HEART");
 			keepGoingDialog = data.Attr("keepGoingDialog", "CH9_KEEP_GOING");
 			color = Calc.HexToColor(data.Attr("color", "dad8cc"));
-			presets = data.Enum<Preset>("presets", Preset.Blank);
+			presets = data.Enum("presets", Preset.Blank);
 			switch (data.Attr("color"))
 			{
 				case "00ffff":
 					presets = Preset.Blue;
-					Logger.Log(LogLevel.Debug, "ParrotHelper", "Blue!");
 					break;
 				case "ff0000":
 					presets = Preset.Red;
-					Logger.Log(LogLevel.Debug, "ParrotHelper", "Red!");
 					break;
 				case "ffd700":
 					presets = Preset.Gold;
-					Logger.Log(LogLevel.Debug, "ParrotHelper", "Gold!");
 					break;
 				case "dad8cc":
 					presets = Preset.Gray;
-					Logger.Log(LogLevel.Debug, "ParrotHelper", "Gray!");
 					break;
 				default:
-					Logger.Log(LogLevel.Debug, "ParrotHelper", "Default!");
 					break;
 					
 			}
@@ -559,8 +554,15 @@ namespace Celeste.Mod.ParrotHelper.Entities
 			}
 			poem = new Poem(text2, 0, 1f);
 			poem.Alpha = 0f;
-			poem.Heart = ParrotHelperModule.GuiSpriteBank.Create("parrothelperrecolorheart");
-			poem.Heart.Color = GetColor();
+			if (presets == Preset.Blank)
+			{
+				poem.Heart = ParrotHelperModule.GuiSpriteBank.Create("parrothelperrecolorheart");
+				poem.Heart.Color = GetColor();
+			}
+			else
+			{
+				poem.Heart = GFX.GuiSpriteBank.Create("heartgem" + ((int)presets));
+			}
 			Scene.Add(poem);
 			poem.Heart.Play("spin");
 			for (float t3 = 0f; t3 < 1f; t3 += Engine.RawDeltaTime)

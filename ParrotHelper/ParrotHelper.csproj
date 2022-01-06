@@ -73,6 +73,8 @@
     <Compile Include="ParrotHelperModule.cs" />
     <None Include="Ahorn\entities\ParrotHelperCustomFakeHeart.jl" />
     <None Include="Ahorn\entities\ParrotHelperFlagBerry.jl" />
+    <None Include="Ahorn\entities\ParrotHelperFlagBerryGold.jl" />
+    <None Include="Ahorn\entities\ParrotHelperFlagBerryMoon.jl" />
     <None Include="Ahorn\lang\en_gb.lang" />
     <None Include="everest.yaml" />
   </ItemGroup>
