@@ -9,7 +9,7 @@ namespace Celeste.Mod.ParrotHelper.Entities
 	[CustomEntity("ParrotHelper/FlagBerry")]
 	[TrackedAs(typeof(Strawberry))]
 	[RegisterStrawberry(true, false)]
-	class FlagBerry : Strawberry, IStrawberry
+	public class FlagBerry : Strawberry, IStrawberry
 	{
 		protected string flag;
 		protected bool set;

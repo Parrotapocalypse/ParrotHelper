@@ -10,7 +10,7 @@ namespace Celeste.Mod.ParrotHelper.Entities
 	[CustomEntity("ParrotHelper/FlagBerryGold")]
 	[TrackedAs(typeof(Strawberry))]
 	[RegisterStrawberry(false, true)]
-	class FlagBerryGold : FlagBerry
+	public class FlagBerryGold : FlagBerry
 	{
 		public FlagBerryGold(EntityData data, Vector2 offset, EntityID gid) : base(data, offset, gid)
 		{

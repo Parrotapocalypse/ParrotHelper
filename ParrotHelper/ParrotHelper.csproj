@@ -17,7 +17,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\..\..\..\..\..\Program Files %28x86%29\Steam\steamapps\common\Celeste\Mods\ParrotHelper\bin\Debug\</OutputPath>
+    <OutputPath>bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -47,9 +47,11 @@
     </Reference>
     <Reference Include="Mono.Cecil">
       <HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Celeste\Mono.Cecil.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="MonoMod.RuntimeDetour">
       <HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Celeste\MonoMod.RuntimeDetour.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="MonoMod.Utils">
       <HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Celeste\MonoMod.Utils.dll</HintPath>
