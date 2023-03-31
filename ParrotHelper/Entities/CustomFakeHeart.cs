@@ -72,11 +72,11 @@ namespace Celeste.Mod.ParrotHelper.Entities
 
 		private enum Preset
 		{
+			Blank,
 			Blue,
 			Red,
 			Gold,
-			Gray,
-			Blank
+			Gray
 		}
 		private Preset presets;
 
@@ -119,7 +119,7 @@ namespace Celeste.Mod.ParrotHelper.Entities
 		public override void Awake(Scene scene)
 		{
 			base.Awake(scene);
-			AreaKey area = (base.Scene as Level).Session.Area;
+			AreaKey area = (Scene as Level).Session.Area;
 			IsGhost = false;
 			sprite = SetHeart(false);
 			Add(sprite);
@@ -133,7 +133,7 @@ namespace Celeste.Mod.ParrotHelper.Entities
 						Audio.Play("event:/new_content/game/10_farewell/fakeheart_pulse", Position);
 					}
 					ScaleWiggler.Start();
-					(base.Scene as Level).Displacement.AddBurst(Position, 0.35f, 8f, 48f, 0.25f);
+					(Scene as Level).Displacement.AddBurst(Position, 0.35f, 8f, 48f, 0.25f);
 				}
 			};
 			if (IsGhost)
@@ -182,8 +182,8 @@ namespace Celeste.Mod.ParrotHelper.Entities
 			{
 				return;
 			}
-			Player entity = base.Scene.Tracker.GetEntity<Player>();
-			if ((entity != null && entity.X > base.X) || (scene as Level).Session.GetFlag(FAKE_HEART_FLAG))
+			Player entity = Scene.Tracker.GetEntity<Player>();
+			if ((entity != null && entity.X > X) || (scene as Level).Session.GetFlag(FAKE_HEART_FLAG))
 			{
 				Visible = false;
 				Alarm.Set(this, 0.0001f, delegate
@@ -194,7 +194,7 @@ namespace Celeste.Mod.ParrotHelper.Entities
 			}
 			else
 			{
-				scene.Add(fakeRightWall = new InvisibleBarrier(new Vector2(base.X + 160f, base.Y - 200f), 8f, 400f));
+				scene.Add(fakeRightWall = new InvisibleBarrier(new Vector2(X + 160f, Y - 200f), 8f, 400f));
 			}
 		}
 
@@ -215,7 +215,7 @@ namespace Celeste.Mod.ParrotHelper.Entities
 			}
 			if (collected)
 			{
-				Player entity = base.Scene.Tracker.GetEntity<Player>();
+				Player entity = Scene.Tracker.GetEntity<Player>();
 				if (entity == null || entity.Dead)
 				{
 					EndCutscene();
@@ -224,13 +224,13 @@ namespace Celeste.Mod.ParrotHelper.Entities
 			base.Update();
 			if (!collected && Scene.OnInterval(0.1f))
 			{
-				SceneAs<Level>().Particles.Emit(P_BlueShine, 1, base.Center, Vector2.One * 8f);
+				SceneAs<Level>().Particles.Emit(P_BlueShine, 1, Center, Vector2.One * 8f);
 			}
 		}
 
 		public void OnHoldable(Holdable h)
 		{
-			Player entity = base.Scene.Tracker.GetEntity<Player>();
+			Player entity = Scene.Tracker.GetEntity<Player>();
 			if (!collected && entity != null && h.Dangerous(holdableCollider))
 			{
 				Collect(entity);
@@ -239,7 +239,7 @@ namespace Celeste.Mod.ParrotHelper.Entities
 
 		public void OnPlayer(Player player)
 		{
-			if (collected || (base.Scene as Level).Frozen)
+			if (collected || (Scene as Level).Frozen)
 			{
 				return;
 			}
@@ -260,25 +260,27 @@ namespace Celeste.Mod.ParrotHelper.Entities
 				}
 				bounceSfxDelay = 0.1f;
 			}
-			player.PointBounce(base.Center);
+			player.PointBounce(Center);
 			moveWiggler.Start();
 			ScaleWiggler.Start();
-			moveWiggleDir = (base.Center - player.Center).SafeNormalize(Vector2.UnitY);
+			moveWiggleDir = (Center - player.Center).SafeNormalize(Vector2.UnitY);
 			Input.Rumble(RumbleStrength.Medium, RumbleLength.Medium);
 		}
 
 		private void Collect(Player player)
 		{
-			base.Scene.Tracker.GetEntity<AngryOshiro>()?.StopControllingTime();
-			Coroutine coroutine = new Coroutine(CollectRoutine(player));
-			coroutine.UseRawDeltaTime = true;
+			Scene.Tracker.GetEntity<AngryOshiro>()?.StopControllingTime();
+			Coroutine coroutine = new Coroutine(CollectRoutine(player))
+			{
+				UseRawDeltaTime = true
+			};
 			Add(coroutine);
 			collected = true;
 			if (!removeCameraTriggers)
 			{
 				return;
 			}
-			foreach (CameraOffsetTrigger item in base.Scene.Entities.FindAll<CameraOffsetTrigger>())
+			foreach (CameraOffsetTrigger item in Scene.Entities.FindAll<CameraOffsetTrigger>())
 			{
 				item.RemoveSelf();
 			}
@@ -390,7 +392,7 @@ namespace Celeste.Mod.ParrotHelper.Entities
 			player.Active = true;
 			player.Depth = 0;
 			player.StateMachine.State = 11;
-			while (!player.OnGround() && player.Bottom < (float)level.Bounds.Bottom)
+			while (!player.OnGround() && player.Bottom < level.Bounds.Bottom)
 			{
 				yield return null;
 			}
@@ -416,16 +418,13 @@ namespace Celeste.Mod.ParrotHelper.Entities
 		{
 			Engine.TimeRate = 1f;
 			Glitch.Value = 0f;
-			if (sfx != null)
-			{
-				sfx.Source.Stop();
-			}
+			sfx?.Source.Stop();
 			level.Session.SetFlag(FAKE_HEART_FLAG);
 			level.Frozen = false;
 			level.FormationBackdrop.Display = false;
 			level.Session.Audio.Music.Event = "event:/new_content/music/lvl10/intermission_heartgroove";
 			level.Session.Audio.Apply(forceSixteenthNoteHack: false);
-			Player entity = base.Scene.Tracker.GetEntity<Player>();
+			Player entity = Scene.Tracker.GetEntity<Player>();
 			if (entity != null)
 			{
 				entity.Sprite.Play("idle");
@@ -440,22 +439,13 @@ namespace Celeste.Mod.ParrotHelper.Entities
 					entity.UpdateHair(applyGravity: true);
 				}
 			}
-			foreach (AbsorbOrb item in base.Scene.Entities.FindAll<AbsorbOrb>())
+			foreach (AbsorbOrb item in Scene.Entities.FindAll<AbsorbOrb>())
 			{
 				item.RemoveSelf();
 			}
-			if (poem != null)
-			{
-				poem.RemoveSelf();
-			}
-			if (bird != null)
-			{
-				bird.RemoveSelf();
-			}
-			if (fakeRightWall != null)
-			{
-				fakeRightWall.RemoveSelf();
-			}
+			poem?.RemoveSelf();
+			bird?.RemoveSelf();
+			fakeRightWall?.RemoveSelf();
 			FakeRemoveCameraTrigger();
 			foreach (InvisibleBarrier wall in walls)
 			{
@@ -519,7 +509,7 @@ namespace Celeste.Mod.ParrotHelper.Entities
 			Add(white = GFX.SpriteBank.Create("heartGemWhite"));
 			Depth = -2000000;
 			yield return null;
-			global::Celeste.Celeste.Freeze(0.2f);
+            Celeste.Freeze(0.2f);
 			yield return null;
 			Engine.TimeRate = 0.5f;
 			player.Depth = -2000000;
@@ -552,8 +542,10 @@ namespace Celeste.Mod.ParrotHelper.Entities
 			{
 				text2 = Dialog.Clean("poem_" + poemID);
 			}
-			poem = new Poem(text2, 0, 1f);
-			poem.Alpha = 0f;
+			poem = new Poem(text2, 0, 1f)
+			{
+				Alpha = 0f
+			};
 			if (presets == Preset.Blank)
 			{
 				poem.Heart = ParrotHelperModule.GuiSpriteBank.Create("parrothelperrecolorheart");
@@ -561,7 +553,7 @@ namespace Celeste.Mod.ParrotHelper.Entities
 			}
 			else
 			{
-				poem.Heart = GFX.GuiSpriteBank.Create("heartgem" + ((int)presets));
+				poem.Heart = GFX.GuiSpriteBank.Create("heartgem" + ((int)presets-1));
 			}
 			Scene.Add(poem);
 			poem.Heart.Play("spin");
@@ -593,8 +585,10 @@ namespace Celeste.Mod.ParrotHelper.Entities
 			}
 			else
 			{
-				FadeWipe fadeWipe = new FadeWipe(level, wipeIn: false);
-				fadeWipe.Duration = 3.25f;
+				FadeWipe fadeWipe = new FadeWipe(level, wipeIn: false)
+				{
+					Duration = 3.25f
+				};
 				yield return fadeWipe.Duration;
 				level.CompleteArea(spotlightWipe: false, skipScreenWipe: true, skipCompleteScreen: false);
 			}
@@ -606,15 +600,12 @@ namespace Celeste.Mod.ParrotHelper.Entities
 		}
 		private void EndCutscene()
 		{
-			Level obj = base.Scene as Level;
+			Level obj = Scene as Level;
 			obj.Frozen = false;
 			obj.CanRetry = true;
 			obj.FormationBackdrop.Display = false;
 			Engine.TimeRate = 1f;
-			if (poem != null)
-			{
-				poem.RemoveSelf();
-			}
+			poem?.RemoveSelf();
 			foreach (InvisibleBarrier wall in walls)
 			{
 				wall.RemoveSelf();

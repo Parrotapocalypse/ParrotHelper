@@ -2,7 +2,7 @@ module ParrotHelperFlagBerryGold
 
 using ..Ahorn, Maple
 
-@mapdef Entity "ParrotHelper/FlagBerryGold" FlagBerryGold(x::Integer, y::Integer, flag::String="", set::Bool=true, winged::Bool=false, nodes::Array{Tuple{Integer, Integer}, 1}=Tuple{Integer, Integer}[])
+@mapdef Entity "ParrotHelper/FlagBerryGold" FlagBerryGold(x::Integer, y::Integer, checkpointID::Integer, order::Integer, flag::String="", set::Bool=true, winged::Bool=false, nodes::Array{Tuple{Integer, Integer}, 1}=Tuple{Integer, Integer}[])
 
 const placements = Ahorn.PlacementDict(
     "FlagBerry (Golden, ParrotHelper)" => Ahorn.EntityPlacement(

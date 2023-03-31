@@ -2,7 +2,7 @@ module ParrotHelperFlagBerryMoon
 
 using ..Ahorn, Maple
 
-@mapdef Entity "ParrotHelper/FlagBerryMoon" FlagBerryMoon(x::Integer, y::Integer, flag::String="", set::Bool=true, nodes::Array{Tuple{Integer, Integer}, 1}=Tuple{Integer, Integer}[])
+@mapdef Entity "ParrotHelper/FlagBerryMoon" FlagBerryMoon(x::Integer, y::Integer, checkpointID::Integer, order::Integer, flag::String="", set::Bool=true, nodes::Array{Tuple{Integer, Integer}, 1}=Tuple{Integer, Integer}[])
 
 const placements = Ahorn.PlacementDict(
     "FlagBerry (Moon, ParrotHelper)" => Ahorn.EntityPlacement(

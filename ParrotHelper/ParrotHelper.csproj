@@ -79,8 +79,10 @@
     <None Include="Ahorn\entities\ParrotHelperFlagBerryMoon.jl" />
     <None Include="Ahorn\lang\en_gb.lang" />
     <None Include="everest.yaml" />
+    <None Include="Loenn\lang\en_gb.lang" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Loenn\entities\" />
     <Folder Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
@@ -116,4 +118,8 @@
     <Content Include="Graphics\ParrotHelper\ParrotHelperSprites.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
 </Project>

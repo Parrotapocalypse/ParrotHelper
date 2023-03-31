@@ -1,0 +1,28 @@
+mods.ParrotHelper.name=ParrotHelper
+
+entities.ParrotHelper/FlagBerry.placements.name.normal=FlagBerry
+entities.ParrotHelper/FlagBerry.placements.name.normal_winged=FlagBerry (Winged)
+entities.ParrotHelper/FlagBerryGold.placements.name.golden=FlagBerry (Golden)
+entities.ParrotHelper/FlagBerryGold.placements.name.golden_winged=FlagBerry (Golden, Winged)
+entities.ParrotHelper/FlagBerryMoon.placements.name.moon=FlagBerry (Moon)
+entities.ParrotHelper/FlagBerry.attributes.description.winged=The strawberry attempts to vertically rise offscreen when the player dashes.
+entities.ParrotHelper/FlagBerry.attributes.description.checkpointID=Manually determine what checkpoint section strawberries are visually grouped up in, showing up on the start menu during gameplay and level select. Overrides Everest's automatic berry IDs. (Default= -1)
+entities.ParrotHelper/FlagBerry.attributes.description.order=Manually determine what order strawberries are visually placed in on the start menu during gameplay and level select. Overrides Everest's automatic berry IDs. (Default= -1)
+entities.ParrotHelper/FlagBerry.attributes.description.flag=The flag this berry should set when collected.
+entities.ParrotHelper/FlagBerry.attributes.description.set=Whether the flag should be set or unset when collected.
+entities.ParrotHelper/FlagBerryGold.attributes.description.winged=The berry attempts to vertically rise offscreen when the player dashes.
+entities.ParrotHelper/FlagBerryGold.attributes.description.flag=The flag this berry should set when collected.
+entities.ParrotHelper/FlagBerryGold.attributes.description.set=Whether the flag should be set or unset when collected.
+entities.ParrotHelper/FlagBerryMoon.attributes.description.checkpointID=Manually determine what checkpoint section strawberries are visually grouped up in, showing up on the start menu during gameplay and level select. Overrides Everest's automatic berry IDs. (Default= -1)
+entities.ParrotHelper/FlagBerryMoon.attributes.description.order=Manually determine what order strawberries are visually placed in on the start menu during gameplay and level select. Overrides Everest's automatic berry IDs. (Default= -1)
+entities.ParrotHelper/FlagBerryMoon.attributes.description.flag=The flag this berry should set when collected.
+entities.ParrotHelper/FlagBerryMoon.attributes.description.set=Whether the flag should be set or unset when collected.
+
+entities.ParrotHelper/CustomFakeHeart.placements.name.fakeheart=Custom Fake Heart
+entities.ParrotHelper/CustomFakeHeart.placements.description.custom_fake_heart=A fake heart as from Farewell. Plays the cutscene from Farewell on collection, with customizable dialog. Can be any color.
+entities.ParrotHelper/CustomFakeHeart.attributes.description.presets=Use to match any heart from the base game. Set to None to use a custom color.
+entities.ParrotHelper/CustomFakeHeart.attributes.description.color=Set a hex color for the heart. Overridden by presets. The heart can't save properties if this field is blank.
+entities.ParrotHelper/CustomFakeHeart.attributes.description.removeCameraTriggers=Whether the heart should remove camera triggers once triggered.
+entities.ParrotHelper/CustomFakeHeart.attributes.description.flag=The flag this heart should set at the end of the cutscene.
+entities.ParrotHelper/CustomFakeHeart.attributes.description.fakeHeartDialog=Dialog ID played before the heart shatters.
+entities.ParrotHelper/CustomFakeHeart.attributes.description.keepGoingDialog=Dialog ID played after the heart shatters.
