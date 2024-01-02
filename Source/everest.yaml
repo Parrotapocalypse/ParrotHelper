@@ -1,0 +1,6 @@
+- Name: ParrotHelper
+  Version: 2.0.0
+  DLL: bin/ParrotHelper.dll
+  Dependencies:
+    - Name: EverestCore
+      Version: 1.4465.0

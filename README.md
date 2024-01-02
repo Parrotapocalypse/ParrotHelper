@@ -7,6 +7,5 @@ In terms of content, this mod has the following:
 * <b>FlagBerry</b>: A strawberry that sets a flag when collected, with normal strawberry features otherwise.
 ## Other info
 * To download the mod itself, go to its [Gamebanana page](https://gamebanana.com/mods/320381).
-* Ping or DM Parrotapocalypse#3122 on Discord if you have bug reports or suggestions of changes or more things to include.
+* Ping or DM .squigglecat on Discord if I messed something up.
 * Credit to twoday for concepts and KaydenFox for sprites from Adventure Helper.
-* More stuff will be added in The Future<sup>TM</sup>

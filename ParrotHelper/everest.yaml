@@ -1,6 +1,0 @@
-- Name: ParrotHelper
-  Version: 1.1.2
-  DLL: bin/Debug/ParrotHelper.dll
-  Dependencies:
-    - Name: Everest
-      Version: 1.2792.0
